@@ -1,0 +1,59 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog", ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Layout title="Blog | T. Matsumoto">
+  <Header />
+  <main class="py-16 px-6">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-xs tracking-[0.2em] text-black/30 uppercase mb-12">
+        Blog
+      </h1>
+
+      {
+        posts.length === 0 ? (
+          <p class="text-sm text-black/40">記事はまだありません。</p>
+        ) : (
+          <div class="space-y-8">
+            {posts.map((post) => (
+              <a
+                href={`/blog/${post.id}`}
+                class="block group"
+              >
+                <p class="text-xs font-mono text-black/25 mb-1">
+                  {post.data.date.toLocaleDateString("ja-JP", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </p>
+                <h2 class="text-base font-medium text-black/70 group-hover:text-black transition-colors mb-1.5">
+                  {post.data.title}
+                </h2>
+                <p class="text-xs text-black/40 leading-relaxed">
+                  {post.data.description}
+                </p>
+                {post.data.tags.length > 0 && (
+                  <div class="flex flex-wrap gap-1.5 mt-2">
+                    {post.data.tags.map((tag) => (
+                      <span class="text-[10px] px-2 py-0.5 rounded bg-black/[0.03] text-black/30">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </a>
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </main>
+  <Footer />
+</Layout>

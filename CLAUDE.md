@@ -1,12 +1,13 @@
 # Portfolio Site - CLAUDE.md
 
 ## Project Overview
-個人ポートフォリオサイト。Astro + TypeScript + Tailwind CSS で構築。
+個人ポートフォリオサイト + ブログ。Astro + TypeScript + Tailwind CSS で構築。
 
 ## Tech Stack
-- Astro v5 (SSG)
+- Astro v6 (SSG)
 - TypeScript (strict)
 - Tailwind CSS v4
+- Content Collections (glob loader) でブログ記事管理
 
 ## Work Rules
 - CLAUDE.md はすべての commit に合わせて更新すること（変更内容・進捗を記録）
@@ -16,19 +17,31 @@
 ## Project Structure
 ```
 src/
-  layouts/       - ベースレイアウト
-  pages/         - Astro ページ
-  components/    - Astro コンポーネント (.astro)
-  data/          - コンテンツデータ（経歴・スキル・プロジェクト等）
-  styles/        - グローバルCSS
+  layouts/         - Layout.astro (ベース), BlogPost.astro (記事)
+  pages/           - index.astro, blog/index.astro, blog/[...slug].astro
+  components/      - Header, Hero, About, Career, Skills, Projects, Blog, Contact, Footer
+  content/blog/    - Markdown ブログ記事
+  content.config.ts - Content Collections スキーマ定義
+  data/            - 経歴・スキル・プロジェクトのデータ
+  styles/          - グローバルCSS
+scripts/
+  generate-blog-post.md - Claude Code 用記事生成プロンプト
+.github/workflows/
+  generate-blog-post.yml - 毎週月曜に記事を自動生成するワークフロー
 ```
+
+## Blog Auto-Generation
+- GitHub Actions (毎週月曜 9:00 JST) で Claude Code CLI を実行
+- `scripts/generate-blog-post.md` のプロンプトに従い記事を生成
+- PR を自動作成 → 人間がレビュー・マージ
+- `ANTHROPIC_API_KEY` を GitHub Secrets に設定する必要あり
 
 ## Design
 - ミニマル・クリーン。装飾を抑え余白とタイポグラフィで構成
-- モノクロ基調 (black/opacity で濃淡)、アクセント色は最小限
+- モノクロ基調 (black/opacity で濃淡)
 - max-w-3xl で読みやすいコンテンツ幅
 
 ## Update Log
+- 2026-04-02: ブログ基盤追加（Content Collections + 記事自動生成パイプライン）
 - 2026-04-02: Next.js → Astro に切り替え、ミニマルデザインで再構築
-- 2026-04-01: playon-music.jp を参考にデザインリファイン（方向性修正済み）
-- 2026-04-01: プロジェクト初期セットアップ (Next.js + TypeScript + Tailwind CSS)
+- 2026-04-01: プロジェクト初期セットアップ

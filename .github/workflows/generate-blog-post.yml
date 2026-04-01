@@ -1,0 +1,63 @@
+name: Generate Blog Post
+
+on:
+  schedule:
+    # 毎週月曜 9:00 JST (0:00 UTC)
+    - cron: "0 0 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Generate blog post
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          claude -p "$(cat scripts/generate-blog-post.md)" --allowedTools "Read,Write,Glob,Grep,Bash" --max-turns 10
+
+      - name: Build check
+        run: npm run build
+
+      - name: Create PR if changes exist
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if git diff --quiet; then
+            echo "No changes detected"
+            exit 0
+          fi
+
+          DATE=$(date +%Y-%m-%d)
+          BRANCH="blog/auto-${DATE}"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add src/content/blog/
+          git commit -m "ブログ記事を自動生成 (${DATE})"
+          git push origin "$BRANCH"
+
+          gh pr create \
+            --title "ブログ記事の自動生成 (${DATE})" \
+            --body "Claude Code により自動生成されたブログ記事です。内容を確認の上マージしてください。" \
+            --base main \
+            --head "$BRANCH"

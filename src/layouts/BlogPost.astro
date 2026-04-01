@@ -1,0 +1,118 @@
+---
+import Layout from "./Layout.astro";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  date: Date;
+  tags: string[];
+}
+
+const { title, description, date, tags } = Astro.props;
+const formattedDate = date.toLocaleDateString("ja-JP", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<Layout title={`${title} | T. Matsumoto`} description={description}>
+  <header
+    class="fixed top-0 left-0 right-0 z-50 bg-[#fafafa]/80 backdrop-blur-sm border-b border-black/5"
+  >
+    <nav class="max-w-3xl mx-auto px-6 h-14 flex items-center">
+      <a
+        href="/"
+        class="text-sm font-medium tracking-wide text-black/80"
+      >
+        T. Matsumoto
+      </a>
+      <span class="mx-3 text-black/20">/</span>
+      <a
+        href="/blog"
+        class="text-xs tracking-wider text-black/40 hover:text-black/80 transition-colors"
+      >
+        Blog
+      </a>
+    </nav>
+  </header>
+
+  <div class="h-14"></div>
+
+  <main class="py-16 px-6">
+    <article class="max-w-3xl mx-auto">
+      <header class="mb-12">
+        <p class="text-xs text-black/30 tracking-wider mb-3 font-mono">
+          {formattedDate}
+        </p>
+        <h1 class="text-2xl md:text-3xl font-bold text-black/85 leading-tight mb-4">
+          {title}
+        </h1>
+        {
+          tags.length > 0 && (
+            <div class="flex flex-wrap gap-1.5">
+              {tags.map((tag) => (
+                <span class="text-[10px] px-2 py-0.5 rounded bg-black/[0.03] text-black/40">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )
+        }
+      </header>
+
+      <div class="prose">
+        <slot />
+      </div>
+    </article>
+  </main>
+</Layout>
+
+<style>
+  @reference "tailwindcss";
+
+  .prose {
+    @apply text-sm text-black/60 leading-[1.9];
+  }
+  .prose :global(h2) {
+    @apply text-lg font-semibold text-black/80 mt-10 mb-4;
+  }
+  .prose :global(h3) {
+    @apply text-base font-medium text-black/70 mt-8 mb-3;
+  }
+  .prose :global(p) {
+    @apply mb-4;
+  }
+  .prose :global(ul),
+  .prose :global(ol) {
+    @apply mb-4 pl-5;
+  }
+  .prose :global(li) {
+    @apply mb-1.5;
+  }
+  .prose :global(ul) :global(li) {
+    @apply list-disc;
+  }
+  .prose :global(ol) :global(li) {
+    @apply list-decimal;
+  }
+  .prose :global(code) {
+    @apply text-xs bg-black/[0.04] px-1.5 py-0.5 rounded font-mono;
+  }
+  .prose :global(pre) {
+    @apply bg-black/[0.03] rounded-lg p-4 mb-4 overflow-x-auto;
+  }
+  .prose :global(pre) :global(code) {
+    @apply bg-transparent p-0;
+  }
+  .prose :global(blockquote) {
+    @apply border-l-2 border-black/10 pl-4 text-black/40 italic my-4;
+  }
+  .prose :global(a) {
+    @apply text-black/70 underline underline-offset-2 decoration-black/20 hover:decoration-black/50 transition-colors;
+  }
+  .prose :global(hr) {
+    @apply border-black/5 my-8;
+  }
+</style>
