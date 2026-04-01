@@ -18,24 +18,25 @@ export const skillCategories: SkillCategory[] = [
       { name: "プロジェクトマネジメント", level: 5 },
       { name: "ステークホルダー管理", level: 4 },
       { name: "提案・プレゼンテーション", level: 4 },
-      { name: "英語コミュニケーション", level: 3 },
+      { name: "データ分析・AI/ML活用", level: 3 },
+      { name: "BI・データ可視化", level: 4 },
+      { name: "英語コミュニケーション", level: 2 },
     ],
   },
   {
     name: "Languages",
     skills: [
-      { name: "Python", level: 5 },
-      { name: "Java", level: 4 },
-      { name: "TypeScript", level: 4 },
+      { name: "Python", level: 4 },
       { name: "SQL", level: 4 },
+      { name: "TypeScript", level: 3 },
+      { name: "Java", level: 3 },
       { name: "Dart", level: 3 },
     ],
   },
   {
     name: "Frameworks",
     skills: [
-      { name: "Django", level: 4 },
-      { name: "XGBoost / scikit-learn", level: 4 },
+      { name: "Django", level: 3 },
       { name: "Astro", level: 3 },
       { name: "Next.js / React", level: 3 },
       { name: "Flutter", level: 3 },
@@ -44,9 +45,7 @@ export const skillCategories: SkillCategory[] = [
   {
     name: "Tools & Platforms",
     skills: [
-      { name: "Tableau", level: 4 },
       { name: "Git", level: 4 },
-      { name: "SAP", level: 3 },
       { name: "AWS", level: 3 },
     ],
   },
