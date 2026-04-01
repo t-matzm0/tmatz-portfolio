@@ -1,0 +1,27 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Takuma Matsumoto | IT Consultant & Software Engineer",
+  description = "システムエンジニアからITコンサルタントへ。技術力とビジネス視点を融合し、課題解決に取り組むポートフォリオサイト。",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="ja" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen font-sans">
+    <slot />
+  </body>
+</html>

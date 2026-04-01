@@ -1,11 +1,11 @@
 # Portfolio Site - CLAUDE.md
 
 ## Project Overview
-個人ポートフォリオサイト。Next.js (App Router) + TypeScript + Tailwind CSS で構築。
+個人ポートフォリオサイト。Astro + TypeScript + Tailwind CSS で構築。
 
 ## Tech Stack
-- Next.js 16 (App Router, SSG)
-- TypeScript
+- Astro v5 (SSG)
+- TypeScript (strict)
 - Tailwind CSS v4
 
 ## Work Rules
@@ -16,18 +16,19 @@
 ## Project Structure
 ```
 src/
-  app/           - Next.js App Router pages
-  components/    - React components
+  layouts/       - ベースレイアウト
+  pages/         - Astro ページ
+  components/    - Astro コンポーネント (.astro)
   data/          - コンテンツデータ（経歴・スキル・プロジェクト等）
+  styles/        - グローバルCSS
 ```
 
-## Design Reference
-- playon-music.jp（ピアノ教室サイト）のデザイン品質を参考
-- カラーパレット: スレートブルー (#4A7C8F) をアクセントに、温かみのあるニュートラルトーン
-- セクション見出し: 日本語タイトル + 装飾線に囲まれた英語サブタイトル (SectionHeader コンポーネント)
-- 豊富な余白 (py-24)、セクション間の背景色切替
-- 丸角カード + subtle border + 柔らかいシャドウ
+## Design
+- ミニマル・クリーン。装飾を抑え余白とタイポグラフィで構成
+- モノクロ基調 (black/opacity で濃淡)、アクセント色は最小限
+- max-w-3xl で読みやすいコンテンツ幅
 
 ## Update Log
-- 2026-04-01: playon-music.jp を参考にデザインリファイン（カラーパレット、セクション構造、カードデザイン刷新）
+- 2026-04-02: Next.js → Astro に切り替え、ミニマルデザインで再構築
+- 2026-04-01: playon-music.jp を参考にデザインリファイン（方向性修正済み）
 - 2026-04-01: プロジェクト初期セットアップ (Next.js + TypeScript + Tailwind CSS)

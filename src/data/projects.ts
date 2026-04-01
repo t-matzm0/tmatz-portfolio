@@ -2,7 +2,6 @@ export interface Project {
   title: string;
   description: string;
   tech: string[];
-  link?: string;
 }
 
 export const personalProjects: Project[] = [
@@ -14,8 +13,7 @@ export const personalProjects: Project[] = [
   },
   {
     title: "Reversi Sensei",
-    description:
-      "AIを搭載したリバーシ（オセロ）対戦・学習アプリケーション。",
+    description: "AIを搭載したリバーシ対戦・学習アプリケーション。",
     tech: ["Flutter", "Dart", "AI"],
   },
   {
@@ -37,8 +35,7 @@ export const personalProjects: Project[] = [
   },
   {
     title: "Discord Bot",
-    description:
-      "Discord向けの多機能ボット。コミュニティ運営の効率化を支援。",
+    description: "Discord向けの多機能ボット。コミュニティ運営の効率化を支援。",
     tech: ["Python", "Discord.py"],
   },
 ];
