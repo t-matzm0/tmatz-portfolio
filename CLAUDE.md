@@ -51,7 +51,7 @@ scripts/
 - 顧客名・プロジェクト固有名は記載しない
 
 ## Update Log
-- 2026-04-02: Industries → Industries & Domains に変更、DD追加
+- 2026-04-02: スキルを●評価からタグ形式に全面変更（Consulting/Development/Industries）、ITDD・CyberDDをConsultingに配置
 - 2026-04-02: PM→PM/PMO変更、ファシリテーション・ドキュメンテーション追加
 - 2026-04-02: Django/Tools&Platforms削除、経験業界セクション追加（金融/製造/官公庁/人材/サステナビリティ/マーケティング/ホスピタリティ）
 - 2026-04-02: スキルレベルを実態に合わせて調整、Tableau/XGBoostをコンサルカテゴリに吸収、SAP削除
