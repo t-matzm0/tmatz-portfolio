@@ -1,0 +1,43 @@
+---
+---
+
+<button
+  id="theme-switcher"
+  class="w-3 h-3 rounded-full transition-colors duration-300 hover:scale-150 cursor-pointer"
+  style="background-color: var(--theme-accent, #000000);"
+  aria-label="カラーテーマを変更"
+  title="カラーテーマを変更"
+/>
+
+<script>
+  const themes = [
+    { name: "mono", accent: "#000000", light: "#00000008" },
+    { name: "blue", accent: "#2563eb", light: "#2563eb10" },
+    { name: "emerald", accent: "#059669", light: "#05966910" },
+    { name: "amber", accent: "#d97706", light: "#d9770610" },
+    { name: "rose", accent: "#e11d48", light: "#e11d4810" },
+    { name: "violet", accent: "#7c3aed", light: "#7c3aed10" },
+  ];
+
+  function applyTheme(index: number) {
+    const theme = themes[index];
+    document.documentElement.style.setProperty("--theme-accent", theme.accent);
+    document.documentElement.style.setProperty(
+      "--theme-accent-light",
+      theme.light
+    );
+    const btn = document.getElementById("theme-switcher");
+    if (btn) btn.style.backgroundColor = theme.accent;
+    localStorage.setItem("theme-index", String(index));
+  }
+
+  // Restore saved theme
+  const saved = localStorage.getItem("theme-index");
+  let current = saved ? parseInt(saved, 10) : 0;
+  applyTheme(current);
+
+  document.getElementById("theme-switcher")?.addEventListener("click", () => {
+    current = (current + 1) % themes.length;
+    applyTheme(current);
+  });
+</script>

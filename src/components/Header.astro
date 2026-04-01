@@ -1,4 +1,6 @@
 ---
+import ThemeSwitcher from "./ThemeSwitcher.astro";
+
 const navItems = [
   { label: "About", href: "#about" },
   { label: "Career", href: "#career" },
@@ -13,9 +15,12 @@ const navItems = [
   class="fixed top-0 left-0 right-0 z-50 bg-[#fafafa]/80 backdrop-blur-sm border-b border-black/5"
 >
   <nav class="max-w-3xl mx-auto px-6 h-14 flex items-center justify-between">
-    <a href="#" class="text-sm font-medium tracking-wide text-black/80">
-      T. Matsumoto
-    </a>
+    <div class="flex items-center gap-3">
+      <ThemeSwitcher />
+      <a href="/" class="text-sm font-medium tracking-wide text-black/80">
+        T. Matsumoto
+      </a>
+    </div>
 
     <ul class="hidden md:flex gap-6">
       {

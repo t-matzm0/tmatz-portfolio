@@ -10,8 +10,8 @@ import { careerHistory } from "../data/career";
       {
         careerHistory.map((entry) => (
           <div class="relative pl-6 border-l border-black/10">
-            <div class="absolute left-0 top-[5px] -translate-x-1/2 w-2 h-2 rounded-full bg-black/20" />
-            <p class="text-xs font-mono text-black/30 mb-1">{entry.period}</p>
+            <div class="absolute left-0 top-[5px] -translate-x-1/2 w-2 h-2 rounded-full bg-accent" />
+            <p class="text-xs font-mono text-accent/70 mb-1">{entry.period}</p>
             <h3 class="text-base font-semibold text-black/80 mb-0.5">
               {entry.company}
             </h3>
@@ -29,7 +29,7 @@ import { careerHistory } from "../data/career";
                   <ul class="space-y-1.5">
                     {project.highlights.map((h) => (
                       <li class="text-xs text-black/50 flex items-baseline gap-2">
-                        <span class="text-black/20 flex-shrink-0">—</span>
+                        <span class="text-accent/40 flex-shrink-0">—</span>
                         {h}
                       </li>
                     ))}

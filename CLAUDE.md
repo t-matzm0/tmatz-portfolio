@@ -19,7 +19,7 @@
 src/
   layouts/         - Layout.astro (ベース), BlogPost.astro (記事)
   pages/           - index.astro, blog/index.astro, blog/[...slug].astro
-  components/      - Header, Hero, About, Career, Skills, Projects, Blog, Contact, Footer
+  components/      - Header, Hero, About, Career, Skills, Projects, Blog, Contact, Footer, ThemeSwitcher
   content/blog/    - Markdown ブログ記事
   content.config.ts - Content Collections スキーマ定義
   data/            - 経歴・スキル・プロジェクトのデータ
@@ -38,10 +38,20 @@ scripts/
 
 ## Design
 - ミニマル・クリーン。装飾を抑え余白とタイポグラフィで構成
-- モノクロ基調 (black/opacity で濃淡)
+- モノクロ基調 (black/opacity で濃淡) + CSS変数でアクセントカラー切替
+- ThemeSwitcher: ヘッダーのドットをクリックで6色切替 (localStorage保存)
 - max-w-3xl で読みやすいコンテンツ幅
 
+## Contact
+- Formspree によるフォーム送信（メールアドレス非公開）
+- `YOUR_FORMSPREE_ID` を実際のIDに差し替える必要あり
+
+## Privacy / Anonymization
+- 所属企業名はぼかして記載（日系大手SIer / ITコンサルティング企業 / 外資系大手総合コンサルティングファーム）
+- 顧客名・プロジェクト固有名は記載しない
+
 ## Update Log
+- 2026-04-02: 名前修正(Takashi)、社名ぼかし、スキル順序変更、フォーム追加、テーマ切替機能
 - 2026-04-02: ブログ基盤追加（Content Collections + 記事自動生成パイプライン）
 - 2026-04-02: Next.js → Astro に切り替え、ミニマルデザインで再構築
 - 2026-04-01: プロジェクト初期セットアップ

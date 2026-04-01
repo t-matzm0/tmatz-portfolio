@@ -12,7 +12,7 @@ export interface CareerEntry {
 export const careerHistory: CareerEntry[] = [
   {
     period: "2024 - Present",
-    company: "PwCコンサルティング合同会社",
+    company: "外資系大手総合コンサルティングファーム",
     role: "ITコンサルタント / シニアアソシエイト",
     projects: [
       {
@@ -39,7 +39,7 @@ export const careerHistory: CareerEntry[] = [
   },
   {
     period: "2023 - 2024",
-    company: "PwCコンサルティング合同会社",
+    company: "外資系大手総合コンサルティングファーム",
     role: "ITコンサルタント / シニアアソシエイト",
     projects: [
       {
@@ -74,7 +74,7 @@ export const careerHistory: CareerEntry[] = [
   },
   {
     period: "2020 - 2022",
-    company: "ブレインズコンサルティング株式会社",
+    company: "ITコンサルティング企業",
     role: "システムエンジニア / ITコンサルタント",
     projects: [
       {
@@ -99,7 +99,7 @@ export const careerHistory: CareerEntry[] = [
   },
   {
     period: "2013 - 2020",
-    company: "株式会社日立製作所",
+    company: "日系大手SIer",
     role: "システムエンジニア",
     projects: [
       {
