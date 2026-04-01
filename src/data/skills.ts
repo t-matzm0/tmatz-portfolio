@@ -1,0 +1,45 @@
+export interface SkillCategory {
+  name: string;
+  skills: { name: string; level: number }[];
+}
+
+export const skillCategories: SkillCategory[] = [
+  {
+    name: "Programming Languages",
+    skills: [
+      { name: "Python", level: 5 },
+      { name: "Java", level: 4 },
+      { name: "TypeScript", level: 4 },
+      { name: "Dart (Flutter)", level: 3 },
+      { name: "SQL", level: 4 },
+    ],
+  },
+  {
+    name: "Frameworks & Libraries",
+    skills: [
+      { name: "Django", level: 4 },
+      { name: "Next.js / React", level: 3 },
+      { name: "Flutter", level: 3 },
+      { name: "XGBoost / scikit-learn", level: 4 },
+    ],
+  },
+  {
+    name: "Tools & Platforms",
+    skills: [
+      { name: "Tableau", level: 4 },
+      { name: "SAP", level: 3 },
+      { name: "Anaplan", level: 3 },
+      { name: "AWS", level: 3 },
+      { name: "Git", level: 4 },
+    ],
+  },
+  {
+    name: "Consulting & Management",
+    skills: [
+      { name: "Project Management", level: 5 },
+      { name: "Stakeholder Management", level: 4 },
+      { name: "Requirements Definition", level: 5 },
+      { name: "English Communication", level: 3 },
+    ],
+  },
+];
