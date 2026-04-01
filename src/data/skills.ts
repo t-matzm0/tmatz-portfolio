@@ -8,13 +8,11 @@ export const skillCategories: TagCategory[] = [
     name: "Consulting",
     tags: [
       "要件定義",
-      "基本設計・詳細設計",
+      "事業者選定・管理",
       "PMO",
-      "事業者管理支援",
-      "調達仕様書作成支援",
+      "ステークホルダー管理",
       "ファシリテーション",
       "ドキュメンテーション",
-      "ステークホルダー管理",
       "データ分析・BI",
       "IT DD・Cyber DD",
     ],
@@ -22,6 +20,9 @@ export const skillCategories: TagCategory[] = [
   {
     name: "Development",
     tags: [
+      "基本設計・詳細設計",
+      "実装",
+      "テスト",
       "Python",
       "SQL",
       "TypeScript",
