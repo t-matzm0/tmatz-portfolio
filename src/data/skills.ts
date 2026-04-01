@@ -15,9 +15,11 @@ export const skillCategories: SkillCategory[] = [
     name: "Consulting",
     skills: [
       { name: "要件定義・業務分析", level: 5 },
-      { name: "プロジェクトマネジメント", level: 5 },
+      { name: "PM / PMO", level: 5 },
       { name: "ステークホルダー管理", level: 4 },
+      { name: "ファシリテーション", level: 4 },
       { name: "提案・プレゼンテーション", level: 4 },
+      { name: "ドキュメンテーション", level: 4 },
       { name: "データ分析・AI/ML活用", level: 3 },
       { name: "BI・データ可視化", level: 4 },
       { name: "英語コミュニケーション", level: 2 },
