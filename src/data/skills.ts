@@ -36,17 +36,19 @@ export const skillCategories: SkillCategory[] = [
   {
     name: "Frameworks",
     skills: [
-      { name: "Django", level: 3 },
       { name: "Astro", level: 3 },
       { name: "Next.js / React", level: 3 },
       { name: "Flutter", level: 3 },
     ],
   },
-  {
-    name: "Tools & Platforms",
-    skills: [
-      { name: "Git", level: 4 },
-      { name: "AWS", level: 3 },
-    ],
-  },
+];
+
+export const industries: string[] = [
+  "金融",
+  "製造",
+  "官公庁",
+  "人材",
+  "サステナビリティ",
+  "マーケティング",
+  "ホスピタリティ",
 ];
