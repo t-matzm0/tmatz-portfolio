@@ -8,13 +8,13 @@ export const skillCategories: TagCategory[] = [
     name: "Consulting",
     tags: [
       "要件定義",
-      "事業者選定・管理",
       "PMO",
+      "事業者選定・管理",
+      "データ分析・BI",
+      "IT DD・Cyber DD",
       "ステークホルダー管理",
       "ファシリテーション",
       "ドキュメンテーション",
-      "データ分析・BI",
-      "IT DD・Cyber DD",
     ],
   },
   {
