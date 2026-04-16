@@ -66,9 +66,10 @@ const FORMSPREE_ID = "YOUR_FORMSPREE_ID";
       </button>
     </form>
 
-    <p id="form-success" class="hidden mt-6 text-sm text-accent">
-      送信しました。ありがとうございます。
-    </p>
+    <div id="form-success" class="hidden max-w-lg p-6 rounded border border-accent/30 bg-accent/5">
+      <p class="text-sm text-accent font-medium mb-1">送信しました</p>
+      <p class="text-xs text-black/50">ありがとうございます。お返事まで少々お待ちください。</p>
+    </div>
   </div>
 </section>
 
@@ -88,12 +89,10 @@ const FORMSPREE_ID = "YOUR_FORMSPREE_ID";
       });
 
       if (res.ok) {
-        form.reset();
-        form.style.display = "none";
+        form.classList.add("hidden");
         success?.classList.remove("hidden");
       }
     } catch {
-      // フォールバック: 通常のsubmitに任せる
       form.submit();
     }
   });

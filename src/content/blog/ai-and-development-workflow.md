@@ -3,6 +3,7 @@ title: "AIツールを活用した開発ワークフロー"
 description: "Claude Codeなどのコーディングアシスタントを日常の開発にどう組み込んでいるか、実践的な使い方を紹介。"
 date: 2026-04-01
 tags: ["AI", "開発効率化", "Claude Code"]
+draft: true
 ---
 
 ## コーディングアシスタントの現在地

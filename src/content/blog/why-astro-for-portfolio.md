@@ -3,6 +3,7 @@ title: "ポートフォリオサイトにAstroを選んだ理由"
 description: "静的サイトジェネレーターAstroをポートフォリオに採用した技術的な背景と、Next.jsとの使い分けについて。"
 date: 2026-04-02
 tags: ["Astro", "技術選定", "SSG"]
+draft: true
 ---
 
 ## なぜAstroか
