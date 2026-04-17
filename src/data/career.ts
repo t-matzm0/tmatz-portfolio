@@ -2,6 +2,7 @@ export interface CareerEntry {
   period: string;
   company: string;
   role: string;
+  summary: string;
   projects: {
     name: string;
     description: string;
@@ -14,6 +15,8 @@ export const careerHistory: CareerEntry[] = [
     period: "2020 - Present",
     company: "外資系大手総合コンサルティングファーム",
     role: "ITコンサルタント",
+    summary:
+      "官公庁向けシステム調達・工程管理、AI/データ分析、IT・Cyber DD、サステナビリティ、マーケティングなど、多様な領域でIT・DXコンサルティングに従事。",
     projects: [
       {
         name: "官公庁向けシステム調達・工程管理支援",
@@ -89,6 +92,8 @@ export const careerHistory: CareerEntry[] = [
     period: "2018 - 2020",
     company: "ITコンサルティング企業",
     role: "ITコンサルタント",
+    summary:
+      "SAP導入プロジェクトの周辺システム要件定義・PMO、採用業務支援Webシステムの保守開発・サブリーダーを担当。",
     projects: [
       {
         name: "ERP導入プロジェクト PMO",
@@ -115,6 +120,8 @@ export const careerHistory: CareerEntry[] = [
     period: "2013 - 2018",
     company: "日系大手SIer",
     role: "システムエンジニア",
+    summary:
+      "金融機関向け基幹システムの新規開発・保守開発に従事。設計・実装・テストからチームマネジメント、性能改善まで幅広く経験。",
     projects: [
       {
         name: "金融機関向け基幹システム新規開発",

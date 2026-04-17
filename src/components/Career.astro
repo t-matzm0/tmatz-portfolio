@@ -15,28 +15,11 @@ import { careerHistory } from "../data/career";
             <h3 class="text-base font-semibold text-black/80 mb-0.5">
               {entry.company}
             </h3>
-            <p class="text-xs text-black/40 mb-4">{entry.role}</p>
-
-            <ul class="space-y-1.5">
-              {entry.projects.map((project) => (
-                <li class="text-xs text-black/50 flex items-baseline gap-2">
-                  <span class="text-accent/40 flex-shrink-0">—</span>
-                  {project.name}
-                </li>
-              ))}
-            </ul>
+            <p class="text-xs text-black/40 mb-3">{entry.role}</p>
+            <p class="text-sm text-black/60 leading-[1.9]">{entry.summary}</p>
           </div>
         ))
       }
-    </div>
-
-    <div class="mt-10">
-      <a
-        href="/career"
-        class="text-xs tracking-wider text-black/30 hover:text-accent transition-colors"
-      >
-        View detailed career &rarr;
-      </a>
     </div>
   </div>
 </section>
