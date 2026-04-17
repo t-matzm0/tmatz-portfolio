@@ -1,0 +1,75 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import { careerHistory } from "../data/career";
+---
+
+<Layout title="Career | Takashi Matsumoto">
+  <header
+    class="fixed top-0 left-0 right-0 z-50 bg-[#fafafa]/80 backdrop-blur-sm border-b border-black/5"
+  >
+    <nav class="max-w-3xl mx-auto px-6 h-14 flex items-center">
+      <a href="/" class="text-sm font-medium tracking-wide text-black/80">
+        T. Matsumoto
+      </a>
+      <span class="mx-3 text-black/20">/</span>
+      <span class="text-xs tracking-wider text-black/40">Career</span>
+    </nav>
+  </header>
+
+  <div class="h-14"></div>
+
+  <main class="py-16 px-6">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-xs tracking-[0.2em] text-black/30 uppercase mb-12">
+        Career — Detailed
+      </h1>
+
+      <div class="space-y-16">
+        {
+          careerHistory.map((entry) => (
+            <div class="relative pl-6 border-l border-black/10">
+              <div class="absolute left-0 top-[5px] -translate-x-1/2 w-2 h-2 rounded-full bg-accent" />
+              <p class="text-xs font-mono text-accent/70 mb-1">{entry.period}</p>
+              <h2 class="text-base font-semibold text-black/80 mb-0.5">
+                {entry.company}
+              </h2>
+              <p class="text-xs text-black/40 mb-5">{entry.role}</p>
+
+              <div class="space-y-4">
+                {entry.projects.map((project) => (
+                  <div class="bg-white rounded-lg p-5 border border-black/5">
+                    <h3 class="text-sm font-medium text-black/70 mb-1.5">
+                      {project.name}
+                    </h3>
+                    <p class="text-xs text-black/40 mb-3 leading-relaxed">
+                      {project.description}
+                    </p>
+                    <ul class="space-y-1.5">
+                      {project.highlights.map((h) => (
+                        <li class="text-xs text-black/50 flex items-baseline gap-2">
+                          <span class="text-accent/40 flex-shrink-0">—</span>
+                          {h}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="mt-16">
+        <a
+          href="/#career"
+          class="text-xs tracking-wider text-black/30 hover:text-accent transition-colors"
+        >
+          &larr; Back to home
+        </a>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

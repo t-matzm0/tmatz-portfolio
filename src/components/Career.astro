@@ -6,7 +6,7 @@ import { careerHistory } from "../data/career";
   <div class="max-w-3xl mx-auto">
     <h2 class="text-xs tracking-[0.2em] text-black/30 uppercase mb-12">Career</h2>
 
-    <div class="space-y-16">
+    <div class="space-y-10">
       {
         careerHistory.map((entry) => (
           <div class="relative pl-6 border-l border-black/10">
@@ -15,31 +15,28 @@ import { careerHistory } from "../data/career";
             <h3 class="text-base font-semibold text-black/80 mb-0.5">
               {entry.company}
             </h3>
-            <p class="text-xs text-black/40 mb-5">{entry.role}</p>
+            <p class="text-xs text-black/40 mb-4">{entry.role}</p>
 
-            <div class="space-y-4">
+            <ul class="space-y-1.5">
               {entry.projects.map((project) => (
-                <div class="bg-white rounded-lg p-5 border border-black/5">
-                  <h4 class="text-sm font-medium text-black/70 mb-1.5">
-                    {project.name}
-                  </h4>
-                  <p class="text-xs text-black/40 mb-3 leading-relaxed">
-                    {project.description}
-                  </p>
-                  <ul class="space-y-1.5">
-                    {project.highlights.map((h) => (
-                      <li class="text-xs text-black/50 flex items-baseline gap-2">
-                        <span class="text-accent/40 flex-shrink-0">—</span>
-                        {h}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <li class="text-xs text-black/50 flex items-baseline gap-2">
+                  <span class="text-accent/40 flex-shrink-0">—</span>
+                  {project.name}
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         ))
       }
+    </div>
+
+    <div class="mt-10">
+      <a
+        href="/career"
+        class="text-xs tracking-wider text-black/30 hover:text-accent transition-colors"
+      >
+        View detailed career &rarr;
+      </a>
     </div>
   </div>
 </section>
