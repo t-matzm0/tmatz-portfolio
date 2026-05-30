@@ -43,14 +43,18 @@ scripts/
 - max-w-3xl で読みやすいコンテンツ幅
 
 ## Contact
-- Formspree によるフォーム送信（メールアドレス非公開）
-- `YOUR_FORMSPREE_ID` を実際のIDに差し替える必要あり
+- 公開ページにフォームは置かない方針（フリーランスエージェント経由で連絡を受ける運用）
+- `Contact.astro` ファイル自体は残置しているがどのページからも import していない
 
 ## Privacy / Anonymization
 - 所属企業名はぼかして記載（日系大手SIer / ITコンサルティング企業 / 外資系大手総合コンサルティングファーム）
 - 顧客名・プロジェクト固有名は記載しない
 
 ## Update Log
+- 2026-05-30: 一区切り（フリーランスエージェント面談での共有URL用途で完成扱い）。Hero文面を価値提案型に書き換え（「事業課題のIT・データ・AIによる解決を、要件整理から実行まで一貫して支援」）、トップを T.M. で匿名化（Header/Hero/Footer の名前を props 化）、フル版は `/portfolio-x7k2` に実名集約、Contact削除（ナビ・コンポーネント・両ページから）、Functional Domains は Industries に統合して撤去、Skills を能力グルーピング化、ニュースリリースは載せない方針確定（NDA/秘密保持）
+- 2026-05-09: スキル整理（Tools&Platforms能力グルーピング化、Industries/Functional Domains 分離、Language追加）、career.ts 補強（海外送金、Anaplan、カードバッチ）
+- 2026-04-27: Heroボタン削除、Blog削除、トップとフル版のデザイン統一、ナビ・コンタクト共通化
+- 2026-04-26: デザインブラッシュアップ（セクション番号・モノスペースラベル・hover動作・余白拡張）
 - 2026-04-24: /portfolio-x7k2 フルページ追加（Hero+About+Career詳細+Skills+Contact を1ページに統合、名刺QRコード用）
 - 2026-04-02: キャリア全面修正（期間・社名・ロール・プロジェクト内容をNotionDBから正確に反映）
 - 2026-04-02: スキルをRFP境界で整理（Consulting=ユーザー側支援/Development=開発側）、調達仕様書を事業者選定・管理に統合

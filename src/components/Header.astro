@@ -1,12 +1,15 @@
 ---
 import ThemeSwitcher from "./ThemeSwitcher.astro";
 
+interface Props {
+  brand?: string;
+}
+const { brand = "T.M." } = Astro.props;
+
 const navItems = [
   { label: "About", href: "#about" },
   { label: "Career", href: "#career" },
   { label: "Skills", href: "#skills" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "#contact" },
 ];
 ---
 
@@ -17,7 +20,7 @@ const navItems = [
     <div class="flex items-center gap-3">
       <ThemeSwitcher />
       <a href="/" class="text-sm font-medium tracking-wide text-black/80">
-        T. Matsumoto
+        {brand}
       </a>
     </div>
 

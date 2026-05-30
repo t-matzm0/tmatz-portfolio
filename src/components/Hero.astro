@@ -1,31 +1,29 @@
 ---
+interface Props {
+  name?: string;
+}
+const { name = "T.M." } = Astro.props;
 ---
 
-<section class="pt-24 pb-20 px-6">
+<section class="pt-32 pb-28 px-6">
   <div class="max-w-3xl mx-auto">
-    <p class="text-xs tracking-[0.2em] text-black/30 uppercase mb-8">
-      IT Consultant
-    </p>
-    <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-black/90 leading-tight mb-6">
-      Matsumoto<br />Takashi
-    </h1>
-    <p class="text-base text-black/50 leading-relaxed max-w-lg mb-10">
-      システムエンジニアからITコンサルタントへ。<br />
-      技術力とビジネス視点を融合し、課題解決に取り組んでいます。
-    </p>
-    <div class="flex gap-3">
-      <a
-        href="#career"
-        class="text-xs tracking-wider px-6 py-2.5 bg-accent text-white rounded hover:opacity-80 transition-opacity"
-      >
-        Career
-      </a>
-      <a
-        href="#contact"
-        class="text-xs tracking-wider px-6 py-2.5 border border-accent/30 text-accent rounded hover:bg-accent/5 transition-colors"
-      >
-        Contact
-      </a>
+    <div class="flex items-center gap-3 mb-12">
+      <span class="text-[10px] font-mono text-accent/60 tracking-widest">00</span>
+      <div class="h-px flex-1 bg-black/10"></div>
+      <span class="text-[10px] font-mono text-black/30 tracking-widest uppercase">Intro</span>
     </div>
+
+    <p class="text-xs font-mono text-black/40 tracking-widest mb-6">
+      {name} <span class="text-black/25">— IT Consultant</span>
+    </p>
+
+    <h1 class="text-xl md:text-2xl font-semibold tracking-tight text-black/85 leading-[1.5] mb-10">
+      事業課題のIT・データ・AIによる解決を、<br />
+      要件整理から実行まで一貫して支援します。
+    </h1>
+
+    <p class="text-base text-black/55 leading-[1.9] max-w-xl">
+      開発の現場で培った技術理解をもとに、上流の構想から実装・運用までを地に足のついた形で推進。金融基幹システムからDX・AI活用まで、幅広い領域での経験があります。
+    </p>
   </div>
 </section>

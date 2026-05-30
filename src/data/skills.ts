@@ -12,6 +12,9 @@ export const skillCategories: TagCategory[] = [
       "事業者選定・管理",
       "データ分析・BI",
       "IT DD・Cyber DD",
+      "ERP導入支援",
+      "M&A支援",
+      "RPA導入",
       "ステークホルダー管理",
       "ファシリテーション",
       "ドキュメンテーション",
@@ -33,14 +36,31 @@ export const skillCategories: TagCategory[] = [
       "Flutter",
     ],
   },
+  {
+    name: "Tools & Platforms",
+    tags: [
+      "BI（Tableau / PowerBI）",
+      "EPM（Anaplan）",
+      "ERP（SAP）",
+      "機械学習（XGBoost / scikit-learn）",
+      "生成AI（LangChain / LlamaIndex / RAG）",
+      "AWS",
+    ],
+  },
+  {
+    name: "Language",
+    tags: ["日本語（母語）", "英語（資料作成・読み書き、会話は限定的）"],
+  },
 ];
 
 export const industries: string[] = [
   "金融",
+  "クレジットカード",
+  "自動車",
   "製造",
   "官公庁",
   "人材",
-  "サステナビリティ",
   "マーケティング",
+  "サステナビリティ",
   "ホスピタリティ",
 ];
