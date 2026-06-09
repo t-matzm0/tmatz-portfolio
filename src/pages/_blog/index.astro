@@ -8,7 +8,7 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<Layout title="Blog | T. Matsumoto">
+<Layout title="Blog | T.M.">
   <Header />
   <main class="py-16 px-6">
     <div class="max-w-3xl mx-auto">
