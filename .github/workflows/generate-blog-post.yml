@@ -1,9 +1,9 @@
 name: Generate Blog Post
 
 on:
-  schedule:
-    # 毎週月曜 9:00 JST (0:00 UTC)
-    - cron: "0 0 * * 1"
+  # ブログは休止中（src/pages/_blog/ に退避）。再開時に schedule を戻す
+  # schedule:
+  #   - cron: "0 0 * * 1"  # 毎週月曜 9:00 JST (0:00 UTC)
   workflow_dispatch:
 
 permissions:
