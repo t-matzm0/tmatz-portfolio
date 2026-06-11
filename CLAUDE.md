@@ -51,6 +51,7 @@ scripts/
 - 顧客名・プロジェクト固有名は記載しない
 
 ## Update Log
+- 2026-06-11: Cloudflare Pages 公開（tmatz-portfolio.pages.dev / カスタムドメイン tmatz.studio）。404.astro 追加（Pages の SPA フォールバックで未知URLがトップを返すのを防止）
 - 2026-06-10: 公開前クリーンアップ。`/blog` を `_blog` に退避（実名→T.M.修正込み、将来の自動生成運用に備え温存）、`/career` 削除（/portfolio-x7k2 と重複・推測可能URLのため）、Layout description を現Hero文面に更新、blog自動生成workflowのscheduleを停止（manual起動のみ残置）。develop/featureブランチ運用開始
 - 2026-05-30: 一区切り（フリーランスエージェント面談での共有URL用途で完成扱い）。Hero文面を価値提案型に書き換え（「事業課題のIT・データ・AIによる解決を、要件整理から実行まで一貫して支援」）、トップを T.M. で匿名化（Header/Hero/Footer の名前を props 化）、フル版は `/portfolio-x7k2` に実名集約、Contact削除（ナビ・コンポーネント・両ページから）、Functional Domains は Industries に統合して撤去、Skills を能力グルーピング化、ニュースリリースは載せない方針確定（NDA/秘密保持）
 - 2026-05-09: スキル整理（Tools&Platforms能力グルーピング化、Industries/Functional Domains 分離、Language追加）、career.ts 補強（海外送金、Anaplan、カードバッチ）
