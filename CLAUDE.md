@@ -50,7 +50,16 @@ scripts/
 - 所属企業名はぼかして記載（日系大手SIer / ITコンサルティング企業 / 外資系大手総合コンサルティングファーム）
 - 顧客名・プロジェクト固有名は記載しない
 
+## Deploy
+- 本番: https://tmatz.studio/ （Cloudflare Pages、プロジェクト名 tmatz-portfolio）
+- **main への push で自動デプロイ**（.github/workflows/deploy.yml、cloudflare/wrangler-action）
+- リリースフロー: feature/ → develop に PR → develop → main にリリース PR → マージで自動デプロイ
+- GitHub Secrets: CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID 設定済み
+
 ## Update Log
+- 2026-06-11: main push での自動デプロイ追加（GitHub Actions + wrangler-action、Secrets 設定済み）
+- 2026-06-11: Notion職務経歴DBとの全件突合レビュー反映。Anaplan を BCI期から除去（事実誤り、実際はPwC期2023年）、人事KPIダッシュボードを BI環境→Anaplan環境に修正、送金チームをサブリーダー実態（レビュー・テスト推進）に修正、直近の官公庁業務標準化・制度DX支援を追加、RPA導入→RPA活用支援、scikit-learn/AWS 削除（業務裏付けなし・ユーザー判断）。匿名化漏れ・期間・業界リスト9件は検証済み問題なし
+- 2026-06-11: Cloudflare Pages 公開（tmatz-portfolio.pages.dev / カスタムドメイン tmatz.studio）。404.astro 追加（Pages の SPA フォールバックで未知URLがトップを返すのを防止）
 - 2026-06-10: 公開前クリーンアップ。`/blog` を `_blog` に退避（実名→T.M.修正込み、将来の自動生成運用に備え温存）、`/career` 削除（/portfolio-x7k2 と重複・推測可能URLのため）、Layout description を現Hero文面に更新、blog自動生成workflowのscheduleを停止（manual起動のみ残置）。develop/featureブランチ運用開始
 - 2026-05-30: 一区切り（フリーランスエージェント面談での共有URL用途で完成扱い）。Hero文面を価値提案型に書き換え（「事業課題のIT・データ・AIによる解決を、要件整理から実行まで一貫して支援」）、トップを T.M. で匿名化（Header/Hero/Footer の名前を props 化）、フル版は `/portfolio-x7k2` に実名集約、Contact削除（ナビ・コンポーネント・両ページから）、Functional Domains は Industries に統合して撤去、Skills を能力グルーピング化、ニュースリリースは載せない方針確定（NDA/秘密保持）
 - 2026-05-09: スキル整理（Tools&Platforms能力グルーピング化、Industries/Functional Domains 分離、Language追加）、career.ts 補強（海外送金、Anaplan、カードバッチ）
