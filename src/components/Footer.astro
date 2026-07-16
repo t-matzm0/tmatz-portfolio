@@ -3,12 +3,18 @@ interface Props {
   owner?: string;
 }
 const { owner = "T.M." } = Astro.props;
+
+// 経歴・スキル等の内容を見直した時に手動で更新する（ビルド日時ではない）
+const LAST_UPDATED = "2026.07";
 ---
 
 <footer class="py-8 px-6 border-t border-black/5">
-  <div class="max-w-3xl mx-auto">
+  <div class="max-w-3xl mx-auto flex items-baseline justify-between">
     <p class="text-[10px] text-black/25 tracking-wider">
       &copy; {new Date().getFullYear()} {owner}
+    </p>
+    <p class="text-[10px] font-mono text-black/25 tracking-wider">
+      Last updated {LAST_UPDATED}
     </p>
   </div>
 </footer>
